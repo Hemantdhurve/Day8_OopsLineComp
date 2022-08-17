@@ -17,7 +17,8 @@ namespace OopsLineComparasion
                 Console.WriteLine("Select option  :\n" + 
                     "1)To Calculate Length of Line\n" + 
                     "2)To Check Equality Of Line\n" + 
-                    "3)To Check Length of Line is greater or less\n");
+                    "3)To Check Length of Line is greater or less\n" +
+                    "4)T Check Points and Length are Equals or Not\n");
 
                 int option = Convert.ToInt32(Console.ReadLine());
                 switch (option)
@@ -89,13 +90,48 @@ namespace OopsLineComparasion
                         }
                        break ;
 
-                        default:
+                    case 4:
+
+                        Console.WriteLine("Enter co-ordinates of Line No.1 : ");
+                        LineComparasion l3 = new LineComparasion();
+                        double res = l3.LineLength();
+                        Console.WriteLine("length of Line no.1 is :" + res);
+                        Console.WriteLine("::::::::::::::::::::::::::::::::::::::::::::");
+
+
+                        Console.WriteLine("Enter co-ordinates of Line No.2 : ");
+                        LineComparasion l4 = new LineComparasion();
+                        double res1 = l4.LineLength();
+                        Console.WriteLine("length of Line no.2 is :" + res1);
+                        Console.WriteLine("::::::::::::::::::::::::::::::::::::::::::::");
+
+                        Console.WriteLine("Now Comparing Length of Lines as :");
+
+                        if (res.Equals(res1))
+                        {
+                            Console.WriteLine("Length of Line No. 1 is Equal to Line No. 2");
+                        }
+                        else if (res.CompareTo(res1) > 0)
+                        {
+                            Console.WriteLine("Length of Line No. 1 is greater than Line No. 2");
+                        }
+                        else
+                        {
+                            Console.WriteLine("Length of Line No. 1 is less than Line No. 2");
+                        }
+                        break;
+                        Console.WriteLine("::::::::::::::::::::::::::::::::::::::::::::");
+
+
+                    default:
                         Console.WriteLine("Please enter proper option");
                         break;
 
                 }
+                Console.WriteLine("::::::::::::::::::::::::::::::::::::::::::::");
                 Console.WriteLine("Do you want to check another program ");
                 goto start;
+
             }
         }
     }

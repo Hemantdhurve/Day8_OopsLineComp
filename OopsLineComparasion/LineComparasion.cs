@@ -28,9 +28,17 @@ namespace OopsLineComparasion
             //To calculate length of line using Math class
 
             double length = Math.Sqrt((Math.Pow((X2 - X1), 2) + Math.Pow((Y2 - Y1), 2)));
-
+           
             return length;
             Console.WriteLine("Length of the line is :" + length);
+
+            Console.WriteLine("Checking for the points are equal or not");
+
+            if (X1 == Y1 || X2 == Y2)
+                Console.WriteLine("Points are Equal");
+            else
+                Console.WriteLine("Points are not Equal");
+
         }
     }
 }
